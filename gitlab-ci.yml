@@ -1,5 +1,12 @@
 stages:
+  - test
   - build
+
+test:
+  stage: test
+  image: golang:latest
+  script: 
+    - go test ./...
 
 build:
   stage: build
@@ -9,4 +16,9 @@ build:
     # Compile and name the binary as `hello-go`
     - go build -o hello-go
     # Execute the binary
-    - ./hello-go
+
+docker:
+  stage: build
+  image: docker:17.07.0-ce
+  script:
+    - docker build .
