@@ -1,0 +1,10 @@
+language: go
+
+go: 
+  - latest
+
+script:
+  # Compile and name the binary as `hello-go`
+  - go build -o hello-go
+  # Execute the binary
+  - ./hello-go
