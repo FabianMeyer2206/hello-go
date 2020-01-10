@@ -1,3 +1,3 @@
-module gitlab.com/jrs_nd/hello-go
+module https://github.com/Altemista/hello-go
 
 go 1.13
