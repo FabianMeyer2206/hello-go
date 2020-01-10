@@ -3,7 +3,7 @@ def label = "k8s-slave-golang-${UUID.randomUUID().toString()[0..7]}"
 
 // loading neccessary docker images
 podTemplate( cloud: 'openshift', label: label, namespace: "altemista-jenkins", slaveConnectTimeout: 30, containers: [
-    containerTemplate(name: 'go', image: 'golang:alpine3.10', ttyEnabled: true, command: 'cat'),
+    containerTemplate(name: 'go', image: 'tetafro/golang-gcc:1.10-alpine', ttyEnabled: true, command: 'cat'),
     containerTemplate(name: 'dind', image: 'docker:18.05-dind', privileged: true, ttyEnabled: true)
   ],
     volumes: [
