@@ -1,3 +1,3 @@
-module https://github.com/Altemista/hello-go
+module github.com/Altemista/hello-go
 
 go 1.13
